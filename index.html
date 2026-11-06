@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasan Emre Mırık | Resmi LoL, Pasta & 3-4-5 Yayınları Simülatörü</title>
+  <meta name="description" content="Hasan Emre Mırık'ın sınav haftası League of Legends oynama, yaş pasta gömme ve 3-4-5 Yayınları kitaplarını yeme simülatörü." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Exam Alert Bar -->
+  <div class="exam-banner" id="exam-banner">
+    <span class="exam-banner-tag">Sınav Uyarısı</span>
+    <span>Sınava Kalan Süre: <span class="exam-timer" id="exam-countdown">00 Gün 04 Saat 12 Dk 59 Sn</span></span>
+    <span>•</span>
+    <span>Çözülen Soru: <strong>0</strong> | Yenen 3-4-5 Sayfası: <strong id="banner-pages">142</strong></span>
+  </div>
+
+  <main class="container">
+
+    <!-- Hero Profile Card -->
+    <header class="hero-header" id="profile-header">
+      <div class="avatar-wrapper" title="Hasan Emre Mırık">
+        <span id="avatar-emoji">👑</span>
+        <span class="level-badge" id="summoner-level">SV 345</span>
+      </div>
+
+      <div class="hero-info">
+        <h1>HASAN EMRE MIRIK</h1>
+        <div class="hero-subtitle">
+          <span>"Sınav geçer ama LP ve Çikolatalı Pasta kalıcıdır."</span>
+        </div>
+        <div class="hero-badges">
+          <span class="badge gold">⚔️ 7/24 Vadi Müdavimi</span>
+          <span class="badge cake">🎂 Profesyonel Pasta İmha Uzmanı</span>
+          <span class="badge book">📕 3-4-5 Yayınları Gurmesi</span>
+        </div>
+      </div>
+
+      <div class="rank-box">
+        <div class="rank-label">Dereceli Tek / Çift</div>
+        <div class="rank-tier" id="rank-tier-text">Pasta Ustası I</div>
+        <div class="rank-lp"><span id="lp-counter">345</span> LP • %100 İştah Oranı</div>
+      </div>
+    </header>
+
+    <!-- Live Stats Grid -->
+    <section class="stats-grid" aria-label="Canlı İstatistikler">
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Oynanan LoL Maçı</span>
+          <span class="stat-icon">🎮</span>
+        </div>
+        <div class="stat-value" id="stat-lol">1,453</div>
+        <div class="progress-track">
+          <div class="progress-fill fill-lol" id="bar-lol" style="width: 88%;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Tıkınılan Pasta Dilimi</span>
+          <span class="stat-icon">🍰</span>
+        </div>
+        <div class="stat-value" id="stat-cake">842</div>
+        <div class="progress-track">
+          <div class="progress-fill fill-cake" id="bar-cake" style="width: 94%;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Yenen 3-4-5 Kitabı</span>
+          <span class="stat-icon">📚</span>
+        </div>
+        <div class="stat-value" id="stat-books">19 Kitap</div>
+        <div class="progress-track">
+          <div class="progress-fill fill-book" id="bar-book" style="width: 78%;"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-header">
+          <span class="stat-title">Gerçek Ders Çalışma</span>
+          <span class="stat-icon">📝</span>
+        </div>
+        <div class="stat-value" id="stat-study">%0.00</div>
+        <div class="progress-track">
+          <div class="progress-fill fill-study" id="bar-study" style="width: 1%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Interactive Grid -->
+    <div class="main-grid">
+
+      <!-- Left: Simulator Controls -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">⚡ Hasan Emre Mırık Günlük Rutin Simülatörü</h2>
+          <span class="badge gold">Q / W / E / R Yetenekleri</span>
+        </div>
+
+        <div class="action-cards">
+          <button class="action-btn" id="btn-lol" type="button">
+            <div class="action-btn-top">
+              <span class="action-emoji">⚔️</span>
+              <span class="action-hotkey">[Q] Yeteneği</span>
+            </div>
+            <div class="action-name">SoloQ Dereceli Gir</div>
+            <div class="action-desc">"Son bir el atıp hemen derse geçiyorum" diyerek 6 saat LoL oyna.</div>
+          </button>
+
+          <button class="action-btn" id="btn-cake" type="button">
+            <div class="action-btn-top">
+              <span class="action-emoji">🎂</span>
+              <span class="action-hotkey">[W] Yeteneği</span>
+            </div>
+            <div class="action-name">Pasta Tıkın</div>
+            <div class="action-desc">Klavye başında çatal bile kullanmadan dev bir dilim yaş pasta göm.</div>
+          </button>
+
+          <button class="action-btn" id="btn-book" type="button">
+            <div class="action-btn-top">
+              <span class="action-emoji">📕</span>
+              <span class="action-hotkey">[E] Yeteneği</span>
+            </div>
+            <div class="action-name">3-4-5 Yayınları Kitabı Ye</div>
+            <div class="action-desc">Soruyu çözmek yerine sayfayı koparıp pasta niyetine çiğne.</div>
+          </button>
+
+          <button class="action-btn study-btn" id="btn-study" type="button">
+            <div class="action-btn-top">
+              <span class="action-emoji">📖</span>
+              <span class="action-hotkey">[R] Ulti (Bozuk)</span>
+            </div>
+            <div class="action-name">Sınava Çalışmayı Dene</div>
+            <div class="action-desc">Normal insanlar gibi test çözmeyi dene (Sistem hatası verebilir).</div>
+          </button>
+        </div>
+
+        <div class="live-quote-box">
+          <div class="quote-avatar" id="quote-icon">🎙️</div>
+          <div class="quote-content">
+            <div class="quote-speaker">Hasan Emre Mırık Anlık Durum</div>
+            <div class="quote-text" id="live-quote">"Kanka yarın sınav var ama önce şu pastayı bitirip 3-4-5 TYT Matematik kitabının 45. sayfasını atıştırmam lazım."</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: 3-4-5 Yayınları Gurme Menüsü -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">🍽️ 3-4-5 Yayınları Gurme Tadım Menüsü</h2>
+          <span class="badge book">Sınav Özel</span>
+        </div>
+
+        <div class="menu-list">
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>📕 3-4-5 TYT Matematik Soru Bankası</h4>
+              <p>Çıtır kapak, bol problemli aroma • 412 Sayfa</p>
+            </div>
+            <button class="eat-book-btn" data-book="TYT Matematik" data-pages="25" type="button">Sayfayı Isır (+25)</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>📘 3-4-5 AYT Matematik ÖSYM Tadında</h4>
+              <p>Gerçekten "ÖSYM Tadında" olduğu için direkt yeniyor</p>
+            </div>
+            <button class="eat-book-btn" data-book="AYT Matematik" data-pages="40" type="button">Türev Gövdeyi Ye (+40)</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>📗 3-4-5 TYT Türkçe Paragraf Denemesi</h4>
+              <p>Çikolatalı pasta sosuyla servis edilir • Bol lifli kağıt</p>
+            </div>
+            <button class="eat-book-btn" data-book="TYT Türkçe Deneme" data-pages="30" type="button">Denemeyi Yut (+30)</button>
+          </div>
+
+          <div class="menu-item">
+            <div class="menu-item-info">
+              <h4>📙 3-4-5 AYT Fizik & Kimya Kombo</h4>
+              <p>Gece 03:00 LoL bozgunu sonrası mide yatıştırıcı</p>
+            </div>
+            <button class="eat-book-btn" data-book="AYT Fen Bilimleri" data-pages="35" type="button">Komple Göm (+35)</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Mini Game Arena -->
+    <section class="minigame-section" aria-label="Mini Oyun">
+      <div class="panel-header">
+        <h2 class="panel-title">🕹️ Mini Oyun: Pasta & 3-4-5 Yakala, Sınav Kağıdından Kaç!</h2>
+        <span class="badge cake">Fare veya Parmağınla Hareket Ettir</span>
+      </div>
+
+      <div class="game-hud">
+        <div>Skor (Kalori + LP): <strong id="game-score">0</strong></div>
+        <div>Kalan Süre: <strong id="game-timer">30</strong> sn</div>
+        <div>En Yüksek Skor: <strong id="game-highscore">0</strong></div>
+      </div>
+
+      <div class="game-arena" id="game-arena">
+        <div class="game-overlay" id="game-overlay">
+          <h3 style="font-size: 1.4rem; color: var(--gold-bright);">Hasan Emre Mırık Beslenme Saati</h3>
+          <p style="max-width: 520px; color: var(--text-muted); font-size: 0.92rem;">
+            Gökten düşen <strong>🍰 Yaş Pastaları (+15)</strong>, <strong>📕 3-4-5 Kitaplarını (+25)</strong> ve <strong>🏆 LoL LP'lerini (+20)</strong> topla!
+            Sakın <strong>📄 Gerçek Sınav Kağıdına (-40)</strong> dokunma!
+          </p>
+          <button class="start-game-btn" id="start-game-btn" type="button">Oyunu Başlat</button>
+        </div>
+
+        <div class="player-catcher" id="player-catcher" style="left: 50%;">
+          <div class="player-catcher-emoji">🍽️</div>
+          <div class="player-catcher-label">HASAN EMRE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Grid: Match History & Daily Routine -->
+    <div class="bottom-grid">
+      <!-- Match History -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">📜 Son Karşılaşma & Beslenme Geçmişi</h2>
+        </div>
+
+        <div class="match-list" id="match-list">
+          <div class="match-card">
+            <div class="match-left">
+              <span class="match-champ">🎂</span>
+              <div class="match-details">
+                <h5>Dereceli Tek/Çift • Çikolatalı Yaş Pasta</h5>
+                <span>Sınavdan 1 gün önce • 48 dakika sürdü</span>
+              </div>
+            </div>
+            <div class="match-kda" style="color: var(--green-win);">
+              ZAFER<br />14 Dilim / 0 Soru
+            </div>
+          </div>
+
+          <div class="match-card">
+            <div class="match-left">
+              <span class="match-champ">📕</span>
+              <div class="match-details">
+                <h5>3-4-5 Yayınları TYT Matematik Yeme Yarışı</h5>
+                <span>ÖSYM Tadında menü • Çözülen soru: 0</span>
+              </div>
+            </div>
+            <div class="match-kda" style="color: var(--gold-bright);">
+              AFİYET OLSUN<br />64 Sayfa Yendi
+            </div>
+          </div>
+
+          <div class="match-card defeat">
+            <div class="match-left">
+              <span class="match-champ">⚔️</span>
+              <div class="match-details">
+                <h5>Sihirdar Vadisi • "Son el kanka söz"</h5>
+                <span>Gece 04:15 • Orman farkı</span>
+              </div>
+            </div>
+            <div class="match-kda" style="color: var(--red-danger);">
+              BOZGUN<br />0 / 12 / 2
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Daily Schedule -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2 class="panel-title">⏰ Sınav Haftası Hasan Emre Mırık Takvimi</h2>
+        </div>
+
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Saat</th>
+              <th>Aktivite</th>
+              <th>Durum</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="schedule-time">13:30</td>
+              <td>Uyanış & Kahvaltıda Yaş Pasta</td>
+              <td>✅ Tamamlandı</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">14:00 - 20:00</td>
+              <td>Arka Arkaya 9 El LoL Dereceli</td>
+              <td>🔥 Aktif</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">20:15</td>
+              <td>"Şimdi kesin derse oturuyorum" Açıklaması</td>
+              <td>🤥 Yalanlandı</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">20:30</td>
+              <td>3-4-5 Yayınları Kitabını Kemirme & Pasta Molası</td>
+              <td>🍰 Devam Ediyor</td>
+            </tr>
+            <tr>
+              <td class="schedule-time">00:00 - 05:30</td>
+              <td>Gece Vardiyası LoL & Kalan Pastayı Bitirme</td>
+              <td>⏳ Planlandı</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+    <footer>
+      <p>Bu site tamamen arkadaş arası mizah ve şaka amacıyla <strong>Hasan Emre Mırık</strong> için hazırlanmıştır. 🎂⚔️📕</p>
+    </footer>
+
+  </main>
+
+  <!-- Error Toast for Trying to Study -->
+  <div class="error-toast" id="error-toast" role="alert">
+    <div class="error-toast-title">⚠️ SİSTEM HATASI: 404 DERS BULUNAMADI</div>
+    <div class="error-toast-body" id="error-toast-body">
+      Hasan Emre Mırık'ın beyni "Soru Çözme" komutunu reddetti. Bunun yerine 1 dilim pasta ve 3 sayfa 3-4-5 Yayınları tüketildi!
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
